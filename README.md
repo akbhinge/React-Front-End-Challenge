@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -2442,3 +2443,15 @@ In the future, we might start automatically compiling incompatible third-party m
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+=======
+# React-Front-End-Challenge
+A web app using Reactjs, Axios and Json
+
+
+- A simple application to fetch API data from a website and present results to the user
+
+* Technologies
+1. React.js
+2. Axios 
+3. CORS
+>>>>>>> 91070b9afd48f6f4eeb95d2e9d674abd5d19d356
