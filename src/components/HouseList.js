@@ -1,24 +1,20 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Adds from './Adds';
 import axios from 'axios'
 
 class HouseList extends Component{
     
     constructor(props){
-        
         super(props);
-        
         this.state ={
             houseList: []
         }
-        
     }
     
     componentWillMount(){
         this.getHouseList()   
-        
     }
-    
     
     getHouseList(){
         
@@ -26,7 +22,7 @@ class HouseList extends Component{
         let _this = this;
         
         axios.get('//api.mcmakler.de/v1/advertisements')
-             .then((response) => {
+            .then((response) => {
             
             const numTotal = 10;
             
@@ -45,13 +41,20 @@ class HouseList extends Component{
         });  
     }
     
+    componentWillUnMount(){
+        
+        this.getHouseList - null;
+        this.state = null;
+        
+    }
+    
     render(){
         
         let houseAds = this.state.houseList.map((adItem, index) => 
                                                 
         <Adds
           key={adItem.additionalId}
-          thumbnail={adItem.advertisementAssets[2].advertisementThumbnails.inventory_m.url}
+          thumbnail={adItem.advertisementAssets.advertisementThumbnails.inventory_m.url}
           title={adItem.title}
           postalCode={adItem.realestateSummary.address.postalCode}
           street={adItem.realestateSummary.address.street}
@@ -73,10 +76,11 @@ class HouseList extends Component{
                         {houseAds}
                      </div>
                 </div>
+            
             </div>
-
         );
     }
 }
+
 
 export default HouseList;
